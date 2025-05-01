@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management</title>
+  <style>
+    body { font-family: Arial; margin: 30px; }
+    input { margin: 5px; padding: 5px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+  </style>
+</head>
+<body>
+
+  <h2>Student Management</h2>
+  <h3> CSE-D </h3>
+
+
+  <form id="studentForm">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email ID" required>
+    <input type="text" id="roll" placeholder="Roll No" required>
+    <button type="button" onclick="addStudent()">Add</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Email</th><th>Roll No</th>
+      </tr>
+    </thead>
+    <tbody id="recordTable"></tbody>
+  </table>
+
+  <script>
+    function addStudent() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const roll = document.getElementById('roll').value.trim();
+      if (!name || !email || !roll) return alert("Please fill all fields.");
+
+      const row = <tr><td>${name}</td><td>${email}</td><td>${roll}</td></tr>;
+      document.getElementById('recordTable').innerHTML += row;
+
+      document.getElementById('studentForm').reset();
+    }
+  </script>
+
+</body>
+</html>
