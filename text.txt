@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Student Management</title>
+  <title>library Management</title>
   <style>
     body { font-family: Arial; margin: 30px; }
     input { margin: 5px; padding: 5px; }
